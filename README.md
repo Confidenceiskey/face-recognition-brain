@@ -26,7 +26,7 @@ The app was fully deployed to Heroku.
 
 
 #### Made with
-- HTML, CSS, JavaScript, React, Node.js, & PostgreSQL
+- HTML, CSS, JavaScript, React, Node.js, Express.js & PostgreSQL
 
 
 #### Complied Using
