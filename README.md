@@ -1,4 +1,4 @@
-### [Facial Image Recognition App](https://smart-brain-dpn.herokuapp.com/)
+### [Facial Image Recognition App](https://smart-brain-dpn.herokuapp.com/) (FRONT END CODE)
 
 _This project is from a Udemy course called [The Complete Web Developer in 2019: Zero to Mastery](https://www.udemy.com/the-complete-web-developer-zero-to-mastery/), which teaches you how to become a full stack web developer._
 
