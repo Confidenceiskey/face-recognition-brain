@@ -20,7 +20,7 @@ class SignIn extends React.Component {
   onSubmitSignIn = () => {
     fetch('https://face-brain-dpn.herokuapp.com/signIn', {
       method: 'post',
-      headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'https://face-brain-dpn.herokuapp.com' },
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         email: this.state.signInEmail,
         password: this.state.signInPassword
