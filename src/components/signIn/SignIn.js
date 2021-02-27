@@ -23,13 +23,14 @@ class SignIn extends React.Component {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://smart-brain-dpn.herokuapp.com",
+        "Access-Control-Allow-Headers": "Accept",
+        "Access-Control-Allow-Origin": "https://smart-brain-dpn.herokuapp.com"
       },
       credentials: "include",
       body: JSON.stringify({
         email: this.state.signInEmail,
         password: this.state.signInPassword,
-      }),
+      })
     })
       .then((response) => response.json())
       .then((data) => {
