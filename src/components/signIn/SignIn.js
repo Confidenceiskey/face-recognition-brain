@@ -18,19 +18,15 @@ class SignIn extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch("https://face-brain-dpn.herokuapp.com/signIn", {
-      referrerPolicy: "origin-when-cross-origin",
+    fetch("https://face-brain-dpn.herokuapp.com/signin", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Headers": "Accept",
-        "Access-Control-Allow-Origin": "https://smart-brain-dpn.herokuapp.com"
       },
-      credentials: "include",
       body: JSON.stringify({
         email: this.state.signInEmail,
         password: this.state.signInPassword,
-      })
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
