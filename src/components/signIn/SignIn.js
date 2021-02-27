@@ -21,6 +21,7 @@ class SignIn extends React.Component {
     fetch('https://face-brain-dpn.herokuapp.com/signIn', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
+      credentials: 'include',
       body: JSON.stringify({
         email: this.state.signInEmail,
         password: this.state.signInPassword
