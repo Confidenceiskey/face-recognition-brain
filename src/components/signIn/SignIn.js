@@ -21,7 +21,6 @@ class SignIn extends React.Component {
     fetch("https://face-brain-dpn.herokuapp.com/signIn", {
       referrerPolicy: "origin-when-cross-origin",
       method: "post",
-      mode: 'no-cors',
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Headers": "Accept",
