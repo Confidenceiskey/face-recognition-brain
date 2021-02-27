@@ -19,6 +19,7 @@ class SignIn extends React.Component {
 
   onSubmitSignIn = () => {
     fetch('https://face-brain-dpn.herokuapp.com/signIn', {
+      referrerPolicy: 'origin-when-cross-origin',
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       credentials: 'include',
