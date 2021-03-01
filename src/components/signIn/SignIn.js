@@ -6,6 +6,7 @@ class SignIn extends React.Component {
     this.state = {
       signInEmail: "",
       signInPassword: "",
+      error: false,
     };
   }
 
@@ -28,23 +29,36 @@ class SignIn extends React.Component {
         password: this.state.signInPassword,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status === 400) {
+          this.setState({ error: true })
+        } 
+        return response.json();
+      })
       .then((data) => {
         if (data.id) {
           this.props.loadUser(data);
           this.props.onRouteChange("home");
         }
-      });
+      })
   };
+
+  showErrorMessage = () => (
+    <div className="f5 dark-red bg-white-40">
+      Incorrect credentials! Please try again.
+    </div>
+  );
 
   render() {
     const { onRouteChange } = this.props;
+    const { error } = this.state;
     return (
       <article className="br3 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
         <main className="pa4 black-80">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f2 fw6 ph0 mh0">Sign In</legend>
+              {error ? this.showErrorMessage() : null}
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="email-address">
                   Email
